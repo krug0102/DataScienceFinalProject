@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Sage,0.9,13.5,14.9,7.1,50.8,12.1,188,0.1,26
 2,Gekko,0.96,14.4,15.1,4.8,50.5,5.7,196,0.1,12
 3,Reyna,1.14,18.2,15.9,4.3,50.1,11.4,251,0.1,25

@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Killjoy,0.98,13.7,13.9,4.4,50.7,8.9,200,0.2,18334
 2,Raze,1,15.2,15.2,5.4,50.7,6.6,230,0.1,13517
 3,Breach,0.91,13.8,15.2,6,50.6,1.8,198,0.1,3654

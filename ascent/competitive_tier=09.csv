@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Brimstone,0.98,14.5,14.7,8.5,51.9,6.0,209,0.1,16866
 2,Sova,1.02,14.8,14.5,5.8,51.2,6.0,210,0.1,16905
 3,Raze,1.06,16.4,15.5,5.2,50.8,6.3,243,0.1,17698

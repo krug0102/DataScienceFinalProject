@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Phoenix,1.12,17.5,15.7,4.9,52.6,3.3,245,0.1,5967
 2,Brimstone,0.97,14.6,15.1,9.6,51.7,5.8,207,0.1,10602
 3,Sova,1.04,15.1,14.6,6.1,51.5,8.0,212,0.2,14695

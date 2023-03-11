@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Killjoy,1.01,14.4,14.3,4.1,51.2,6.8,204,0.2,18550
 2,Reyna,1.14,17.6,15.5,4.6,50.2,11.1,249,0.1,30219
 3,Brimstone,0.97,14.5,15,8.2,50.1,5.1,209,0.1,14065

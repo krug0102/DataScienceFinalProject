@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Sage,0.94,14,15,7.2,51.3,11.8,193,0.1,21257
 2,Phoenix,1.1,17.2,15.6,4.4,51.0,1.8,239,0.1,3293
 3,Viper,1.02,15.1,14.8,5.8,50.8,11.9,208,0.2,21563

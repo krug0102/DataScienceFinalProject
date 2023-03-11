@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Phoenix,1.11,16.8,15.2,4.6,51.3,3.8,240,0.1,10554
 2,Killjoy,0.97,13.7,14.1,4,50.4,6.7,196,0.2,18364
 3,Brimstone,0.95,14.1,14.8,7.6,50.3,5.5,204,0.1,15119

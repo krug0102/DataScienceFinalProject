@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Gekko,0.91,13.4,14.8,4.9,51.9,4.2,191,0.1,8672
 2,Brimstone,0.94,13.7,14.5,7.1,50.5,5.2,200,0.1,10615
 3,Killjoy,0.94,13.2,14,4.1,50.4,6.8,193,0.2,13872

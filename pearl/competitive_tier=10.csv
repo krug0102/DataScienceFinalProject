@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Brimstone,0.96,14.1,14.7,8,51.8,4.5,204,0.1,12130
 2,Gekko,0.95,14.2,14.9,5.2,51.1,5.5,196,0.1,14837
 3,Phoenix,1.11,16.9,15.2,4.8,50.8,3.9,241,0.1,10380

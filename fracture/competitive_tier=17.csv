@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Brimstone,1,14.8,14.8,8.8,51.4,11.3,208,0.1,16329
 2,Reyna,1.16,18.1,15.6,4.5,50.7,9.3,249,0.1,13436
 3,Phoenix,1.11,17.2,15.5,4.7,50.6,2.1,239,0.1,3047

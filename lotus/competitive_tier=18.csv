@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Gekko,0.98,14.6,15,5.3,52.1,6.8,198,0.1,8581
 2,Reyna,1.15,18,15.7,4.4,50.7,9.5,245,0.1,12018
 3,Viper,1.05,15.3,14.6,5.8,50.5,1.4,212,0.2,1823

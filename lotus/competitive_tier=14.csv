@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Astra,1.04,15.1,14.4,6.1,51.8,2.3,208,0.1,4486
 2,Gekko,0.97,14.6,15.1,5.1,51.7,6.3,198,0.1,12197
 3,Raze,1.08,17,15.7,4.9,51.3,7.6,246,0.1,14823

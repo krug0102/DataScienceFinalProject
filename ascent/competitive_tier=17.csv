@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Sage,0.96,14.4,14.9,7.3,52.6,5.8,198,0.1,8496
 2,Brimstone,0.97,14.7,15.1,10,51.9,5.6,208,0.1,8154
 3,Phoenix,1.12,17.7,15.8,5,51.6,3.1,245,0.1,4582

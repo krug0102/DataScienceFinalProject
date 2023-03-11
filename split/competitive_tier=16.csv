@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Brimstone,0.97,14.6,15,9,50.8,4.7,208,0.1,7947
 2,Reyna,1.13,17.9,15.8,4.6,50.8,9.2,247,0.1,15450
 3,Fade,0.96,14.6,15.2,6.3,50.4,2.9,202,0.1,4829

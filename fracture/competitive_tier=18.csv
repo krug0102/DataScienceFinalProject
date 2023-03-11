@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Killjoy,1.03,14.9,14.4,3.9,51.6,8.0,204,0.2,10083
 2,Sage,0.96,14.2,14.9,7,51.4,5.4,194,0.2,6863
 3,Brimstone,1,14.8,14.8,8.9,50.9,11.8,207,0.2,14940

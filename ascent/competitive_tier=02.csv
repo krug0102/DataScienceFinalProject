@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Killjoy,0.88,12.1,13.6,4.4,52.0,6.4,182,0.2,3302
 2,Brimstone,0.87,12.4,14.3,6.5,51.9,3.7,185,0.1,1945
 3,Astra,0.92,12.7,13.8,4.9,50.4,0.7,182,0.2,383

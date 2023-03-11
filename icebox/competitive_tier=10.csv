@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Sage,0.9,13.3,14.8,7,50.6,12.6,186,0.1,34293
 2,Gekko,0.95,14.1,14.9,4.7,50.4,5.3,195,0.1,14375
 3,Phoenix,1.08,16.6,15.4,4.5,50.2,2.7,235,0.1,7383

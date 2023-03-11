@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Brimstone,0.96,14.2,14.8,8.2,51.6,5.7,204,0.1,15633
 2,Phoenix,1.1,17,15.4,4.6,51.3,3.7,240,0.1,10173
 3,Raze,1.05,16.5,15.6,4.8,51.0,5.5,240,0.1,14983

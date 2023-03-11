@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,Killjoy,0.85,11.8,13.8,4,58.1,4.5,172,0.2,647
 2,Gekko,0.78,11.2,14.5,4.5,52.0,2.8,166,0.1,398
 3,Skye,0.76,10.6,13.9,6.3,50.8,3.4,159,0.1,482

@@ -1,4 +1,4 @@
-Rank,Agent,KD,KDA,Win %,Pick %,Avg.,Score,First Blood %,Matches
+Rank,Agent,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
 1,KAY/O,0.75,10.4,13.9,6.8,54.0,3.2,166,0.1,443
 2,Killjoy,0.85,11.8,13.9,4.2,52.8,4.2,175,0.2,579
 3,Viper,0.76,11.3,14.9,4.9,52.8,6.0,165,0.1,825
