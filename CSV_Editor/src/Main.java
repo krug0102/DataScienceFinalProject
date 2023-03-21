@@ -12,19 +12,27 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) throws IOException {
         prompt();
+
     }
 
     public static void prompt() throws IOException {
-        System.out.println("Please enter the file path: ");
+        System.out.println("Please enter the directory path: ");
         Scanner input = new Scanner(System.in);
-        String filePath = input.nextLine();
+        String directoryPath = input.nextLine();
 
-        printCSV(filePath);
+        File dir = new File(directoryPath);
+        File[] directoryFiles = dir.listFiles();
+        if(directoryFiles != null){
+            for(File file : directoryFiles){
+                printCSV(file.getAbsolutePath());
+            }
+        }
 
         prompt();
     }
 
     public static void printCSV(String fileName) throws IOException{
+        System.out.println(fileName);
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             String[] lineInArray;
             while ((lineInArray = reader.readNext()) != null) {
