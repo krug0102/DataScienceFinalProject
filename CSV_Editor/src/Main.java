@@ -27,8 +27,6 @@ public class Main {
                 printCSV(file.getAbsolutePath());
             }
         }
-
-        prompt();
     }
 
     public static void printCSV(String fileName) throws IOException{
