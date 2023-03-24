@@ -9,7 +9,7 @@ Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blo
 8,Viper,Controller,0.99,14.3,14.5,5.6,49.8,2.6,204,0.1,7415
 9,Sage,Sentinel,0.92,13.4,14.6,7.1,49.7,10.3,191,0.1,28820
 10,Astra,Controller,1.03,15,14.6,6.5,49.4,1.3,208,0.1,3708
-11,Gekko,Initiator0.94,14.1,15,5,49.0,4.9,197,0.1,13662
+11,Gekko,Initiator,0.94,14.1,15,5,49.0,4.9,197,0.1,13662
 12,Cypher,Sentinel,0.98,14.1,14.4,5.2,48.8,2.8,196,0.1,7809
 13,Chamber,Sentinel,1.09,16.2,14.8,3.3,48.7,2.1,224,0.1,5880
 14,Fade,Initiator,0.93,14,15,6.4,48.6,3.5,198,0.1,9726
