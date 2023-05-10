@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Gekko,Initiator,0.83,11.1,13.4,4.8,60.8,2.9,166,0.2,400
 2,Astra,Controller,1.08,13.3,12.3,4.2,57.5,0.6,199,0.2,80
 3,Chamber,Sentinel,0.89,11.9,13.4,3.4,55.4,2.0,177,0.2,285

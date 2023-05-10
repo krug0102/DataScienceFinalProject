@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Brimstone,Controller,1,14.7,14.8,8.8,51.6,10.8,207,0.1,18072
 2,Phoenix,Duelist,1.13,17.3,15.3,4.7,51.2,2.2,240,0.1,3711
 3,Sage,Sentinel,0.92,13.7,14.9,7,50.7,6.5,190,0.1,10761

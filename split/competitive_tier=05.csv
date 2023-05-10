@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Sage,Sentinel,0.88,12.7,14.4,7.2,50.9,13.5,184,0.1,27675
 2,Reyna,Duelist,1.1,16.6,15.1,4.7,50.4,11.1,240,0.1,22727
 3,Killjoy,Sentinel,0.96,13.5,14.1,4.3,50.3,6.9,197,0.2,14023

@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Reyna,Duelist,0.96,13.7,14.2,4.2,52.6,10.9,203,0.1,1555
 2,Killjoy,Sentinel,0.85,11.6,13.7,4,52.2,4.3,174,0.2,619
 3,Gekko,Initiator,0.83,11.9,14.3,4.4,51.5,2.5,172,0.1,361

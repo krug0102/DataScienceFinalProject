@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Killjoy,Sentinel,0.99,13.9,14.1,4.3,51.5,6.7,202,0.2,15373
 2,Brimstone,Controller,0.97,14.2,14.6,7.4,51.0,4.9,208,0.1,11345
 3,Reyna,Duelist,1.14,17.3,15.2,4.7,50.7,11.4,247,0.1,26238

@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Breach,Initiator,0.78,11.1,14.3,5.4,54.9,1.7,167,0.1,244
 2,Killjoy,Sentinel,0.83,11.3,13.5,4.4,54.5,4.6,173,0.2,661
 3,Skye,Initiator,0.79,11.5,14.4,7.2,53.0,3.4,170,0.1,491

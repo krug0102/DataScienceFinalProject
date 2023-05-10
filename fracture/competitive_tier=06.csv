@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Gekko,Initiator,0.96,13.9,14.6,4.9,52.0,4.5,198,0.1,10171
 2,Reyna,Duelist,1.17,17.5,15,4.7,51.8,11.7,251,0.1,26490
 3,Astra,Controller,1.03,14.5,14.2,5.5,51.5,0.9,206,0.1,1944

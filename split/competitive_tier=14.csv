@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Brimstone,Controller,0.99,14.8,15,8.9,51.4,5.0,211,0.1,9904
 2,Raze,Duelist,1.06,16.9,16,5,50.9,9.3,245,0.1,18428
 3,Reyna,Duelist,1.14,17.9,15.7,4.6,50.8,10.0,249,0.1,19773

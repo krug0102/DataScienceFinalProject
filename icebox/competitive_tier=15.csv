@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Sage,Sentinel,0.94,14,15,7.2,51.3,11.8,193,0.1,21257
 2,Phoenix,Duelist,1.1,17.2,15.6,4.4,51.0,1.8,239,0.1,3293
 3,Viper,Controller,1.02,15.1,14.8,5.8,50.8,11.9,208,0.2,21563

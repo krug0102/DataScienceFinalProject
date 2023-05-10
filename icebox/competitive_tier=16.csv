@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Phoenix,Duelist,1.09,17,15.7,4.3,52.8,1.7,235,0.1,2856
 2,Fade,Initiator,0.95,14.5,15.2,6.3,50.8,2.4,201,0.1,3941
 3,Killjoy,Sentinel,1.02,14.7,14.4,3.7,50.7,6.6,203,0.2,10986

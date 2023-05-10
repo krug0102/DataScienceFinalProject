@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Killjoy,Sentinel,0.96,13.2,13.7,4.4,50.9,6.4,196,0.2,12876
 2,Gekko,Initiator,0.93,13.6,14.6,5.1,50.5,4.4,194,0.1,8842
 3,Raze,Duelist,1,15.1,15.1,5,50.3,5.9,227,0.1,11939

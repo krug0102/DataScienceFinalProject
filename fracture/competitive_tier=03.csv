@@ -1,4 +1,4 @@
-Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win %,Pick %,Avg. Score,First Blood %,Matches
+Rank,Agent,Agent Class,KD,Kills,Deaths,Assists,Win Pct.,Pick Pct.,Avg. Score,First Blood %,Matches
 1,Killjoy,Sentinel,0.9,12.4,13.8,4.4,51.7,6.1,185,0.2,7611
 2,Brimstone,Controller,0.91,13.1,14.4,6.5,51.6,4.7,192,0.1,5904
 3,Gekko,Initiator,0.86,12.5,14.5,4.7,50.2,3.7,182,0.1,4651
