@@ -1,0 +1,137 @@
+---
+title: "Final Project Step 3: Data Generalization"
+author: "Zeke Krug"
+date: "4/25/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+load(file="mapDataList.rdata")
+load(file="mapAgentData.rdata")
+```
+
+## Creating and Using Custom Functions
+
+I've created several custom functions in order to traverse my data.  Currently, the most important 
+data is being stored in what R calls a "Large list".  Its a nested list (called mapDataList) which holds all of the data.frames for a given rank on a given map.
+
+```{r}
+head(mapDataList, 1)
+```
+In order to (hopefully) make it clearer the structure of the list, if I wanted to find the data
+for the a given map, I would use the following R commands:  
+`mapDataList[[i]]` -> a list of 18 data.frames representing the data for a given rank (since
+there are 7 maps, i should be in 1:7 and I have a way to make sure of this as well.)  
+Then, to get the data for a given rank, I would take the list I got back from `mapDataList[[i]]`
+and do:
+`map<-mapDataList[[i]]` (this gets the map we're looking for)  
+`rank<-map[[j]]` (j should be in 1:18 since I only have data for 18 ranks, and I also have a way to
+guarantee this as well.)  
+
+The way that I can guarantee that is by having pre-defined vectors for each map and rank,
+and then using the `which` function to be able to find the given index where that map/rank
+is in the list (`mapDataList` has been set up so that the maps and ranks are in the same order
+as defined in their respective vectors).
+
+```{r}
+(maps<-c("ascent", "fracture", "haven", "icebox", "lotus", "pearl", "split"))
+(agents<-c("Astra", "Breach", "Brimstone", "Chamber", "Cypher", "Fade", "Gekko",
+          "Harbor", "Jett", "KAY/O", "Killjoy", "Neon", "Omen", "Phoenix", "Raze",
+          "Reyna", "Sage", "Skye", "Sova", "Viper", "Yoru"))
+(ranks<-c("Iron 1", "Iron 2", "Iron 3", "Silver 1", "Silver 2", "Silver 3", "Gold 1", "Gold 2", "Gold 3", "Platinum 1", "Platinum 2", "Platinum 3", "Diamond 1", "Diamond 2", "Diamond 3"))
+```
+
+
+
+I also have another Large list that holds all of the agent data from each rank and map. 
+
+```{r}
+head(mapAgentData, 1)
+```
+This one is even harder to try to explain, but here goes.  
+The first level of lists are the seven maps, so `mapAgentData[[i]]` gets you into a certain map.  
+Then if you go one more level down, `mapAgentData[[i]][[j]]`, you get into the agents (of which there are 21).  
+And finally, the last level, `mapAgentData[[i]][[j]][[k]]` is where you'll find data for the agent on the specified map for all 18 ranks (or levels of play).
+`mapAgentData` has also been set up to be in the same order as the above vectors.  
+
+**NOTE:** *Actually, I just realized how terrible this is and a point for optimization.  I'm going to convert each list at the last level into a data.frame so there's only two levels that need to be traversed.  So `mapAgentData[[i]][[j]]` will be a data.frame for the given character containing the data from all ranks in the order specified by the `ranks` vector. Every entry in the original `mapAgentData[[i]][[j]][[k]]` will become a row in the data.frame.*
+
+# Some functions from Step 2
+
+These are some functions that might be useful in producing interesting stats to the user
+
+```{r}
+# agent (string, name of agent) -> integer (the number of matches the given agent played on ascent)
+# This is a map specific function, however, I believe I can generalize it more
+# to take a map and an agent.
+getNumberOfMatchesAscent<-function(agent){
+  selectedAgent<-which(agents==agent)
+  agentData<-ascentAgentData[[selectedAgent]]
+  matches<-list()
+  for(i in 1:length(agentData)){
+    element<-agentData[[i]]
+    matches[i]=element$Matches
+  }
+  return(sum(unlist(matches)))
+}
+
+
+#   -> list containing the number of times each agent had the highest win % on ascent
+# This is another map specific function that can be changed to 
+# be more generalized to take an agent and map
+getNumberOfHigestWinPrcntAscent<-function(){
+  agentList<-list()
+  mapData<-mapAgentData[[1]]
+  for(i in 1:length(agents)){
+    currentAgentData<-mapData[[i]]
+    countTopRank<-0
+    for(j in 1:length(currentAgentData)){
+      element<-currentAgentData[[j]]
+      if(element$Rank==1){
+        countTopRank<-countTopRank+1
+      }
+    }
+    agentList[i]=countTopRank
+  }
+  return(agentList)
+}
+
+# The main function that I want to implement in order to display to a user
+# rank (string, rank which represents the level of play), map (name of map) -> data.frame of the top 5 agents for the map at the given rank
+processRequest<-function(rank, map){
+  selectedMap <- mapDataList[[which(maps == map)]]
+  selectedRank <- selectedMap[[which(ranks == rank)]]
+  result <- getTop5(selectedRank)
+  return(result)
+}
+
+# helper function for the main function to get rid of unimportant data
+# df (data.frame representing the data for a given rank and map) -> subsetTop5 (subset of original data.frame containing the first 5 rows and specified columns)
+getTop5<-function(df) {
+  top5<-head(df, 5)
+  subsetTop5<-subset(top5, select=c("Agent", "Win..", "Avg..Score","KD", "Matches"))
+  colnames(subsetTop5)[2] = "Win Prct"
+  colnames(subsetTop5)[3] = "Average Combat Score"
+  return(subsetTop5)
+}
+
+```
+
+
+
+
+## Shiny App Overview
+
+For the Shiny application, I plan to convert some of my predefined functions that I made
+for Step 2 and make them take a few extra parameters like map and rank in order to output the
+team with the best chance to win and maybe a few extra statistics (if I have time).  
+
+# UI
+For the UI, I plan to have two inputs, one for rank and one for map.  I'm not sure what kind of input
+makes sense yet, probably not a slider though, but I'll figure it out with some trial and error.
+
+# Server
+For the server, I want to have a couple of functions that do different things to display specific statistics to the user, 
+but the main function (`processRequest` above) will just present the agents with the highest win % for the given map and rank.
+

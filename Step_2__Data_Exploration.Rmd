@@ -1,0 +1,169 @@
+---
+title: "Project Step 2: Data Exploration"
+author: "Zeke Krug"
+date: "3/10/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+load("~/DataScienceFinalProject/agentAverageWinRate.RData")
+load("~/DataScienceFinalProject/topWinPrct.RData")
+load("~/DataScienceFinalProject/topClassWinPrct.RData")
+load("~/DataScienceFinalProject/agentMatchesPlayed.RData")
+```
+
+## Project Overview
+For my final project I plan to make a web app that produces the Valorant agent composition
+with the highest probability of winning given a map (only Ascent, Split, Haven, Pearl, Lotus,
+Fracture, and Icebox are player in the Competitive playlist) and player rank (Iron I through Diamond III).
+
+With this project, I hope to describe agent usage patterns and also team composition patterns in Valorant.
+I am interested in seeing the differences in agent useage between the ranks.
+
+## Description of Data
+The data is a collection of statistics for each Valorant agent on certain maps, acquired from the website blitz.gg,
+which tracks game statistics. blitz.gg collects player data from the players that have the desktop app installed on 
+their computer, and then combine all the data based on certain filters like Agent, Map, etc.
+
+There are 18 `.csv` files (for the 18 ranks) per map, of which there are 7.  And each `.csv` file has 21 observations
+with 11 variables with the following data types.
+
+|Rank   |Agent    |Agent Class    |KD   |Kills    |Deaths   |Assists    |Win %    |Pick %   |Avg. Score   |First Blood %    |Matches    |
+|:-----:|:-------:|:-------------:|:---:|:-------:|:-------:|:---------:|:-------:|:-------:|:-----------:|:---------------:|:---------:|
+|int    |chr      |chr            |num  |num      |num      |num        |num      |num      |int          |num              |int        |
+
+**Rank:** Ranking of agent based on Win %  
+**Agent:** The name of the agent  
+**Agent Class:** Agents are split into four categories: Duelist, Initiator, Controller, and Sentinel, with each providing different benefits  
+**KD\*:** Ratio describing the number of kills/number of deaths  
+**Kills\*:** The number of kills an agent gets in a match  
+**Deaths\*:** The number of times an agent dies in a match  
+**Assists\*:** The number of times an agent deals damage to an enemy, but another teammate secures the kill in a match  
+**Win %:** The percentage of matches an agent wins  
+**Pick %:** The percentage to matches an agent is picked to play  
+**Avg. Score:** An in-game score given to players based on their performance throughout a match  
+**First Blood %:** The percentage of times the first kill in the round is achieved by an agent  
+**Matches:** The total number of matches that an agent has played  
+**\*  ** average across all matches
+
+All data files can be found [here](https://github.com/krug0102/DataScienceFinalProject).
+
+A description of your data in more detail than you did in stage 1 (numeric summaries, graphic summaries, details of variable transformations, how many observations)
+
+### Information about the Total Matches Played by each Agent on each Map
+```{r, echo=FALSE}
+summary(agentMatchesPlayed)
+as.data.table(agentMatchesPlayed,keep.rownames = FALSE)
+```
+
+```
+**Observations**
+Reyna is the agent with the most amount of matches played in total and on every map, except for Split, where Sage (the agent with the second most) has the most.  Reyna's match totals across maps are similar as well.
+Harbor is the agent with the least amount of matches played in total, with Astra as a close second.
+
+Except for Icebox, all of the maps have a similar number of matches played on them.
+```
+
+### Summary of the Average Win %s on each Map
+```{r, echo=FALSE}
+summary(agentAverageWinRate)
+as.data.table(agentAverageWinRate,keep.rownames = FALSE)
+```
+
+```
+**Observations**
+Win % might not be a very useful statistic, as when the same agent is on both teams one usually wins and one usually loses (ties are possible). Win % is also dependent on many factors.  However, Win % shows which agents are more successful than not.
+
+Brimstone, Gekko, Killjoy, and Sage consistently hover around the 50% Win % mark and one of them will usually have the highest on each map.  This suggests that these four agents are important to a teams success.
+```
+
+### Barplots Showing how many Times an Agent Would have the Highest Win % on a Map
+```{r, echo=FALSE}
+  noZeroAscent<-subset(topWinPrct, topWinPrct$topRanks>0, select=c(agents,topRanks))
+  noZeroFracture<-subset(topWinPrct, topWinPrct$`fractureWinPrctDF$topRanks`>0, select=c(agents,`fractureWinPrctDF$topRanks`))
+  noZeroHaven<-subset(topWinPrct, topWinPrct$`havenWinPrctDF$topRanks`>0, select=c(agents,`havenWinPrctDF$topRanks`))
+  noZeroIcebox<-subset(topWinPrct, topWinPrct$`iceboxWinPrctDF$topRanks`>0, select=c(agents,`iceboxWinPrctDF$topRanks`))
+  noZeroLotus<-subset(topWinPrct, topWinPrct$`lotusWinPrctDF$topRanks`>0, select=c(agents,`lotusWinPrctDF$topRanks`))
+  noZeroPearl<-subset(topWinPrct, topWinPrct$`pearlWinPrctDF$topRanks`>0, select=c(agents,`pearlWinPrctDF$topRanks`))
+  noZeroSplit<-subset(topWinPrct, topWinPrct$`splitWinPrctDF$topRanks`>0, select=c(agents,`splitWinPrctDF$topRanks`))
+  
+  barplot(noZeroAscent$topRanks, names.arg=noZeroAscent$agents, main="# of times Agent had highest win % on Ascent", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroFracture$`fractureWinPrctDF$topRanks`, names.arg=noZeroFracture$agents, main="# of times Agent had highest win % on Fracture", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroHaven$`havenWinPrctDF$topRanks`, names.arg=noZeroHaven$agents, main="# of times Agent had highest win % on Haven", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroIcebox$`iceboxWinPrctDF$topRanks`, names.arg=noZeroIcebox$agents, main="# of times Agent had highest win % on Icebox", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroLotus$`lotusWinPrctDF$topRanks`, names.arg=noZeroLotus$agents, main="# of times Agent had highest win % on Lotus", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroPearl$`pearlWinPrctDF$topRanks`, names.arg=noZeroPearl$agents, main="# of times Agent had highest win % on Pearl", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+  
+  barplot(noZeroSplit$`splitWinPrctDF$topRanks`, names.arg=noZeroSplit$agents, main="# of times Agent had highest win % on Split", sub="Agents that did not have the highest win % are omitted.", xlab="Agent", ylab="count",cex.names=0.75)
+```
+```
+**Observations**
+Brimstone and Killjoy are consistently some of the agents with the highest win % regardless of the map.  This is probabaly due to the fact that their utility in game (smokes which block lines of sight and turret which alerts to enemy presence, respectively) are useful for stopping enemies.
+
+Surprisingly, Reyna, who has the most matches played across almost all of the maps, very rarely shows up as the agent with the highes win %.
+```
+
+### Barplots Showing how many Times an Agent Would have the Highest Win % on a Map
+```{r, echo=FALSE}
+barplot(topClassWinPrct$ascentClassTopWinPrct, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Ascent"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`fractureClassWinPrct$fractureClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Fracture"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`havenClassWinPrct$havenClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Haven"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`iceboxClassWinPrct$iceboxClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Icebox"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`lotusClassWinPrct$lotusClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Lotus"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`pearlClassWinPrct$pearlClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Pearl"), xlab="Agent Class", ylab="count")
+
+barplot(topClassWinPrct$`splitClassWinPrct$splitClassTopWinPrct`, names.arg=topClassWinPrct$agentClasses, main=paste0("# of times Agent Class had highest win % on Split"), xlab="Agent Class", ylab="count")
+```
+
+```
+**Observations**
+From the barplots, it seems like the Controller agent class is very successful no matter the map.  
+
+There also seem to be patterns in agent class success between maps.  It's difficult to pinpoint the exact reason as to why certain classes are more successful on certain maps, as it probably comes down to map design.  However, we can observe that for certain maps, different classes are more successful.  On Ascent, Icebox, and Split, Controllers, Duelists, and Sentinels are more successful than Initiators.  On Lotus and Pearl, Controllers and Initiators are more successful than Duelists and Sentinels.  Finally, Fracture and Haven don't seem to fall into any pattern.
+```
+
+## Sanity Check
+The original data set that I was planning on using, unfortunately for me, did NOT pass the initial
+sanity check.  It was an old data set, meaning it didn't have some of the newer maps and agents, which wasn't
+a big deal since I could still do what I wanted to without those.  However, it also had missing data.  Some
+of the `.csv` files were incomplete (either empty or missing several rows) or didn't import correctly.
+
+Due to this, I decided to create new `.csv` files with current agent data (the Description of Data reflects this data).
+I also added a new column that isn't provided by blitz.gg, which is the class of the agent.  This was a meticulous process 
+involving copious amounts of fiddling with regex and copying and pasting.  Thankfully, it was worth it, as now all of the 
+`.csv` files have the correct amount (21) of rows.  I then decided to add a new column, the agent's class, which required
+writing a Java function to read and edit the existing `.csv` files.
+
+
+## Other Details
+Thanks to the new data, there are no NAs.
+
+## Next Steps
+I haven't fully figured out how I want to store the data.  Currently, each rank for each map is stored as its own
+`data.frame`, meaning I have
+```{r, echo=FALSE}
+7*18
+```
+individual `data.frame`s. In my mind this is not ideal, and I should at least combine the data from the same maps together
+into a 3-D thing.
+
+**Most importantly, as it's directly related to what my project is about, I want to start looking at Rank (level of play) data.  I want to find out whether some agents are more effective at lower levels than higher levels or vice-versa.  Step 2 looked more at map specific data as it was easiest to get done relatively quickly.**
+
+Currently, most things are nested lists which are hard to traverse and pull data from.
+
+I am also working on creating/optimizing functions to create less global variables and better data structures.
+
+```
+```
